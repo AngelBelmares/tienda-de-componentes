@@ -11,6 +11,8 @@ export function App() {
 					<Route path="/" element={<CategoriesPage/>}></Route>
 					<Route path="/products" element={<ProductsPage/>}></Route>
 					<Route path="/products/:category" element={<ProductsPage/>}></Route>
+					<Route path="/products/search/:search" element={<ProductsPage/>}></Route>
+					{/* <Route path="/*" element={<NotFoundPage/>}></Route> */}
 				</Routes>
 			</BrowserRouter>
 		</>

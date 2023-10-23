@@ -1,1 +1,5 @@
-http://localhost:/
+http://localhost:3000/products/search?search=resistencia
+
+###
+
+http://localhost:3000/products/search?search=%25resistencia%25de%255%25ohms%25

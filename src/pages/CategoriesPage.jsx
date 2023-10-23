@@ -1,20 +1,22 @@
 import React from "react"
+
 import { Category } from "../components/ProductCategory"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { BackgroundVideo } from "../components/BackgroundVideo"
+import { SearchBar } from "../components/SearchBar"
+
 
 const categories = [
 	{
 		imageSrc:
 			"https://etstore.in/wp-content/uploads/2022/08/samwha-capacitor-105-degree-500x500-1.webp",
 		name: "Capacitores",
-		href: "products/capacitores",
+		href: "products/capacitores?page=1&limit=30",
 	},
 	{
 		imageSrc:
 			"https://mvelectronica.s3.us-east-2.amazonaws.com/productos/ZI-D/609027fcc76f4.webp",
 		name: "Baterías",
-		href: "/products/baterías",
+		href: "/products/baterías?page=1&limit=30",
 	},
 	{
 		imageSrc:
@@ -113,23 +115,22 @@ const categories = [
 		href: "/products/transistores",
 	},
 	{
-		imageSrc: "https://geekelectronica.com/wp-content/uploads/2020/09/Componentes.jpg",
+		imageSrc:
+			"https://geekelectronica.com/wp-content/uploads/2020/09/Componentes.jpg",
 		name: "Ver todos los productos",
 		href: "/products",
-	}
+	},
 ]
 
-export function CategoriesPage() {
-	const icon = <FontAwesomeIcon icon={faSearch} style={{color: "#fffff5",}} />
 	
+
+export function CategoriesPage() {
 	return (
 		<>
+			<BackgroundVideo />
+
 			<header className="categories-header">
-				<div className="header-searchbar">
-					<input className="searchbar-input" type="search" />
-					<button className="searchbar-button" type="submit">{icon}</button>
-				</div>
-				
+				<SearchBar/>
 			</header>
 			<section className="category-grid">
 				{categories.map((category) => {

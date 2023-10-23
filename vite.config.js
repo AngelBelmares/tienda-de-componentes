@@ -7,4 +7,10 @@ export default defineConfig({
   build: {
     base: '/' // Ruta a tu archivo HTML
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      'react-router-dom': 'react-router-dom'
+    }
+  }
 })
