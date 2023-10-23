@@ -4,7 +4,7 @@ export class ComponentController {
   getAll = async (req, res) => {
     try {
       const categories = await ComponentModel.getAll();
-      res.send(categories);
+      res.json(categories);
     } catch (error) {
       console.log(error);
       res.status(500).send('Error interno del servidor');
@@ -15,7 +15,7 @@ export class ComponentController {
     try{
       const { category } = req.params;
       const products = await ComponentModel.getByCategory({ category });
-      res.send(products);
+      res.json(products);
     } catch (error) {
       console.log(error);
       res.status(500).send('Error interno del servidor');

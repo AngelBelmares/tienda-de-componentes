@@ -1,13 +1,21 @@
-export function Product({ imageLink, name, stock, link}) {
-  
+export function Product({ name, price, image, stock, link, store }) {
   return (
-    <article className="pd-container">
-      <header className="pd-container-header">
-        <img className="pd-container-image" src={imageLink} alt="" />
-      </header>
-      <h3 className="pd-container-name">{name}</h3>
-      <span className="pd-container-stock">{stock}</span>
-      <a className="pd-container-link" href="">{link}</a>
-    </article>
-  )
+    <a className="pd-link" href={link}>
+      <article className="pd-container">
+        <header className="pd-container-header">
+          <img className="pd-container-image" src={image} alt="" />
+        </header>
+        <aside className="pd-container-info">
+          <h3 className="pd-container-name">{name}</h3>
+          <span className="pd-container-price">{price}</span>
+          <span className={stock > 0 ? 'pd-container-avaiable' : 'pd-container-unavailable'}>
+            {stock > 0 ? 'Disponible' : 'Agotado'}
+          </span>	
+          <span className="pd-container-store">{store}</span>
+        </aside>
+      </article>
+    </a>
+  );
 }
+
+export default Product
