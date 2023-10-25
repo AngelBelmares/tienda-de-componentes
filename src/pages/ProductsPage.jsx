@@ -3,14 +3,16 @@ import { useParams, useLocation } from "react-router-dom"
 import { Product } from "../components/ProductContainer"
 import { BackgroundVideo } from "../components/BackgroundVideo"
 import { SearchBar } from "../components/SearchBar"
+import { PaginationBar } from "../components/PaginationBar"
 
 export function ProductsPage() {
 	const [products, setProducts] = useState([])
+	const [totalItems, setTotalItems] = useState(0)
 	const { category, search } = useParams()
 	const location = useLocation()
 	const searchParams = new URLSearchParams(location.search)
 	const page = searchParams.get("page") || 1
-	const limit = searchParams.get("limit") || 30
+	const limit = searchParams.get("limit") || 24
 
 	useEffect(() => {
 		let apiUrl = `http://localhost:3000/products/${category}?page=${page}&limit=${limit}`
@@ -25,17 +27,20 @@ export function ProductsPage() {
 		fetch(apiUrl)
 			.then((response) => response.json())
 			.then((data) => {
-				setProducts(data)
+				setProducts(data.components)
+				setTotalItems(data.total)
 			})
 	}, [category, search, page, limit])
+
+	const totalPages = Math.ceil(totalItems / limit)
 
 	return (
 		<>
 			<BackgroundVideo />
-
 			<header className="categories-header">
 				<SearchBar />
 			</header>
+
 			<section className="products-grid">
 				{products.map((product) => {
 					return (
@@ -50,6 +55,13 @@ export function ProductsPage() {
 						/>
 					)
 				})}
+			</section>
+
+			<section>
+				<PaginationBar
+					totalPages={totalPages}
+					currentPage={page}
+				/>
 			</section>
 		</>
 	)
