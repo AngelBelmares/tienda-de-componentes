@@ -4,7 +4,6 @@ import { BackgroundVideo } from "../components/BackgroundVideo"
 import { SearchBar } from "../components/SearchBar"
 import { DistributorCard } from "../components/DistributorCard"
 
-
 const categories = [
 	{
 		imageSrc:
@@ -68,7 +67,7 @@ const categories = [
 	},
 	{
 		imageSrc:
-			"https://mvelectronica.s3.us-east-2.amazonaws.com/productos/CHA-19N/60d117bbb2124.webp",
+			"https://mvelectronica.s3.us-east-2.amazonaws.com/productos/CHP-13CP/605cdebe331f4.webp",
 		name: "Organizadores",
 		href: "/products/organizadores?page=1&limit=24",
 	},
@@ -122,18 +121,51 @@ const categories = [
 	},
 ]
 
+const distribuitors = [
+	{
+		name: "MV Electronica",
+		location:
+			"Av. Diego Díaz de Berlanga 1319-C-15vo Sector, Colonia Las Puentes,66460 San Nicolás de los Garza, N.L.",
+		locationUrl: "https://maps.app.goo.gl/WzKadsE3o33oQWLe9",
+		schedule: {
+			monday: "Lunes: 9 AM-2 PM, 3:30-7 PM",
+			tuesday: "Martes: 9 AM-2 PM, 3:30-7 PM",
+			wednesday: "Miércoles: 9 AM-2 PM, 3:30-7 PM",
+			thursday: "Jueves: 9 AM-2 PM, 3:30-7 PM",
+			friday: "Viernes: 9 AM-2 PM, 3:30-7 PM",
+			saturday: "Sábado: 9 AM-3 PM",
+			sunday: "Cerrado",
+		},
+		image:
+			"https://lh3.googleusercontent.com/p/AF1QipM6ZZrbNN70HSeFBwtMFD2RWckre_ZRHHBEwuXE=s1360-w1360-h1020",
+		url: "https://mvelectronica.com/",
+	},
+	{
+		name: "Electrónica para estudiantes",
+		location: "Av.colon#173, Calle Pte., Sarabia, 64490 Monterrey, N.L.",
+		locationUrl: "https://maps.app.goo.gl/MYUxM5xdLh94Jbp39",
+		schedule: {
+			monday: "Lunes: 9 AM-7 PM",
+			tuesday: "Martes: 9 AM-7 PM",
+			wednesday: "Miércoles: 9 AM-7 PM",
+			thursday: "Jueves: 9 AM-7 PM",
+			friday: "Viernes: 9 AM-7 PM",
+			saturday: "Sábado: 9 AM-4 PM",
+			sunday: "Cerrado",
+		},
+		image:
+			"https://wtcmonterrey.uanl.mx/wp-content/uploads/2019/05/Fachada-3.png",
+		url: "https://electronicaparaestudiantes.com/",
+	},
+]
 
 export function CategoriesPage() {
 	return (
 		<>
 			<BackgroundVideo />
 
-			<footer>
-				<DistributorCard />
-			</footer>
-
 			<header className="categories-header">
-				<SearchBar/>
+				<SearchBar />
 			</header>
 			<section className="category-grid">
 				{categories.map((category) => {
@@ -147,6 +179,20 @@ export function CategoriesPage() {
 					)
 				})}
 			</section>
+
+			<footer>
+				<h2 className="footer-title">Distribuidores</h2>
+				<section className="distributionCards-grid">
+					{distribuitors.map((distribuitorsInfo) => {
+						return (
+							<DistributorCard
+								key={distribuitorsInfo.name}
+								distribuitorsInfo={distribuitorsInfo}
+							/>
+						)
+					})}
+				</section>
+			</footer>
 		</>
 	)
 }

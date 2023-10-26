@@ -1,6 +1,6 @@
 export function Product({ name, price, image, stock, link, store }) {
   return (
-    <a className="pd-link" href={link}>
+    <a className="pd-link" href={link} target="_blank">
       <article className="pd-container">
         <header className="pd-container-header">
           <img className="pd-container-image" src={image} alt="" />

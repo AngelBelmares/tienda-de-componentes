@@ -1,17 +1,30 @@
 import React from "react"
 
-export function DistributorCard() {
+export function DistributorCard({distribuitorsInfo}) {
+	const { name, location, locationUrl, schedule, image, url } = distribuitorsInfo
+	const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = schedule;
 	return (
 		<>
 			<article className="db-card">
-				<img className="db-card-img" src="" alt="" />
+				<a href={url} target="_blank" className="db-card-link">
+					<img className="db-card-img" src={image} alt="" />
+				</a>
 				<aside className="db-card-info">
-					<h3 className="db-card-title">Nombre del distribuidor</h3>
-					<p className="db-card-location">Ubicación del distribuidor</p>
-					<p className="db-card-schedule">Horario de atención</p>
-					<p className="db-card-phone">Telefono del distribuidor</p>
-					<p className="db-card-email">Correo del distribuidor</p>
-					<p className="db-card-link">Pagina del Distribuidor</p>
+					<h3 className="db-card-title">{name}</h3>
+					<a href={locationUrl} target="_blank" className="db-card-location">
+						{location}
+					</a>
+					<ul className="db-card-schedule">
+						{" "}
+						<b>Horario de atención:</b>
+						<li>{monday}</li>
+						<li>{tuesday}</li>
+						<li>{wednesday}</li>
+						<li>{thursday}</li>
+						<li>{friday}</li>
+						<li>{saturday}</li>
+						<li>{sunday}</li>
+					</ul>
 				</aside>
 			</article>
 		</>
