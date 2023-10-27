@@ -4,7 +4,6 @@ import { Product } from "../components/ProductContainer"
 import { BackgroundVideo } from "../components/BackgroundVideo"
 import { SearchBar } from "../components/SearchBar"
 import { PaginationBar } from "../components/PaginationBar"
-import { NotFoundPage } from "./NotFoundPage"
 
 export function ProductsPage() {
 

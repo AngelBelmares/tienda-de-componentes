@@ -134,7 +134,7 @@ const distribuitors = [
 			thursday: "Jueves: 9 AM-2 PM, 3:30-7 PM",
 			friday: "Viernes: 9 AM-2 PM, 3:30-7 PM",
 			saturday: "Sábado: 9 AM-3 PM",
-			sunday: "Cerrado",
+			sunday: "Domingo: Cerrado",
 		},
 		image:
 			"https://lh3.googleusercontent.com/p/AF1QipM6ZZrbNN70HSeFBwtMFD2RWckre_ZRHHBEwuXE=s1360-w1360-h1020",
@@ -151,12 +151,28 @@ const distribuitors = [
 			thursday: "Jueves: 9 AM-7 PM",
 			friday: "Viernes: 9 AM-7 PM",
 			saturday: "Sábado: 9 AM-4 PM",
-			sunday: "Cerrado",
+			sunday: "Domingo: Cerrado",
 		},
 		image:
 			"https://wtcmonterrey.uanl.mx/wp-content/uploads/2019/05/Fachada-3.png",
 		url: "https://electronicaparaestudiantes.com/",
 	},
+	{
+		name: "Zener Byte",
+		location: "Pedro de Alba SN, Niños Héroes, Ciudad Universitaria, 66455 San Nicolás de los Garza, N.L.",
+		locationUrl: "https://maps.app.goo.gl/tz2oLj1pbd5swjCA9",
+		schedule:{
+			monday: "Lunes: 7 AM-9:30 PM",
+			tuesday: "Martes: 7 AM-9:30 PM",
+			wednesday: "Miércoles: 7 AM-9:30 PM",
+			thursday: "Jueves: 7 AM-9:30 PM",
+			friday: "Viernes: 7 AM-9:30 PM",
+			saturday: "Sábado: Cerrado",
+			sunday: "Domingo: Cerrado",
+		},
+		image: "https://lh3.googleusercontent.com/p/AF1QipM2o6HikAgb5V73YahsVbNnC5KW4-AvB9HD_cIc=s1360-w1360-h1020",
+		url: "https://zenerbyte.com/",
+	}
 ]
 
 export function CategoriesPage() {
