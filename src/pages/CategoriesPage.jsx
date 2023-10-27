@@ -3,6 +3,8 @@ import { Category } from "../components/ProductCategory"
 import { BackgroundVideo } from "../components/BackgroundVideo"
 import { SearchBar } from "../components/SearchBar"
 import { DistributorCard } from "../components/DistributorCard"
+import favicon from "../assets/images/favicon.jpg"
+
 
 const categories = [
 	{
@@ -175,14 +177,23 @@ const distribuitors = [
 	}
 ]
 
+
 export function CategoriesPage() {
 	return (
 		<>
 			<BackgroundVideo />
 
 			<header className="categories-header">
+				<a className="logo" href="/">
+					<img src={favicon} alt="Logo" />
+					<div className="name">
+						<h2 className="mecatronic">Mecatronic</h2>
+						<h2 className="components">Components</h2>
+					</div>
+				</a>
 				<SearchBar />
 			</header>
+
 			<section className="category-grid">
 				{categories.map((category) => {
 					return (

@@ -4,6 +4,7 @@ import { Product } from "../components/ProductContainer"
 import { BackgroundVideo } from "../components/BackgroundVideo"
 import { SearchBar } from "../components/SearchBar"
 import { PaginationBar } from "../components/PaginationBar"
+import favicon from "../assets/images/favicon.jpg"
 
 export function ProductsPage() {
 
@@ -40,8 +41,9 @@ export function ProductsPage() {
 			<>
 				<BackgroundVideo />
 				<header className="categories-header">
-					<SearchBar />
-				</header>
+				<a href="/"><img src={favicon} alt="logo" /></a>
+				<SearchBar />
+			</header>
 				<section className="not-found">
 					<h1></h1>
 					<h2>No se encontraron productos</h2>
@@ -54,6 +56,11 @@ export function ProductsPage() {
 		<>
 			<BackgroundVideo />
 			<header className="categories-header">
+				<a className="logo" href="/">
+					<img src={favicon} alt="Logo" />
+					<h2>Mecatronic 
+						Components</h2>
+				</a>
 				<SearchBar />
 			</header>
 

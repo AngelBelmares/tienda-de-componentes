@@ -1,9 +1,65 @@
 .categories-header {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	margin-block: 50px;
+	margin-block: 50px 30px;
 	padding: 0;
+	margin-inline: 15%;
+}
+
+.logo {
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: min-content;
+}
+
+.categories-header img {
+	height: 100px;
+	z-index: 1;
+}
+
+.name{
+	margin-left: 20px;
+	opacity: 0.95;
+}
+
+.mecatronic {
+  margin-left: 15px;
+  font-size: 1.4rem;
+  max-height: 2.8rem;
+  line-height: 1.4rem;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    10px 0.7rem 42px #9500ff,
+    10px 0.7rem 82px #9500ff,
+    10px 0.7rem 92px #9500ff,
+    10px 0.7rem 102px #9500ff,
+    10px 0.7rem 150px #9500ff,
+		10px 0.7rem 42px #9500ff,
+    10px 0.7rem 82px #9500ff,
+    10px 0.7rem 92px #9500ff,
+    10px 0.7rem 102px #9500ff,
+    10px 0.7rem 150px #9500ff;
+
+	margin: 0;
+}
+
+.components {
+  margin-left: 15px;
+  font-size: 1.4rem;
+  max-height: 2.8rem;
+  line-height: 1.4rem;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff;
+	margin: 0;
 }
 
 .header-searchbar {
@@ -71,7 +127,7 @@
 }
 
 .ca-container span {
-	color: rgba(255, 255, 245, 0.859);
+	color: #fff;
 	font-weight: 600;
 	margin-left: 12px;
 	overflow: hidden;
