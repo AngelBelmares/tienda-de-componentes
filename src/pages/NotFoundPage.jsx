@@ -11,8 +11,10 @@ export function NotFoundPage() {
 			<header className="categories-header">
 				<a className="logo" href="/">
 					<img src={favicon} alt="Logo" />
-					<h2>Mecatronic 
-						Components</h2>
+					<div className="name">
+						<h2 className="mecatronic">Mecatronic</h2>
+						<h2 className="components">Components</h2>
+					</div>
 				</a>
 				<SearchBar />
 			</header>
